@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Document</title>
+      </head>
+      <body>
+        <style>
+          section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+          }
+          article {
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 10px;
+          }
+          img {
+            width: 100%;
+            border-radius: 10px;
+          }
+          .info {
+            padding: 0 1rem;
+          }
+        </style>
+        <h1>Bistro Barbushka</h1>
+        <section class="container">
+          <template>
+            <article>
+              <img src="" alt="" />
+              <h2></h2>
+              <div class="info">
+                <p class="kategori"></p>
+                <p class="navn"></p>
+                <p class="pris"></p>
+              </div>
+            </article>
+          </template>
+        </section>
+        <script>
+          const url = "https://babushka-dd8a.restdb.io/rest/menu";
+          const options = {
+            headers: { "x-apikey": "600ec2fb1346a1524ff12de4" },
+          };
+          async function hentData() {
+            const respons = await fetch(url, options);
+            const json = await respons.json();
+            vis(json);
+          }
+          function vis(json) {
+            console.log(json);
+          }
+          hentData();
+          let container = document.querySelector(".container");
+          let temp = document.querySelector("template");
+
+          function vis(persongalleri) {
+            persongalleri.forEach((mad) => {
+              const klon = temp.cloneNode(true).content;
+              klon.querySelector("img").src = `faces/${mad.billede}`;
+              klon.querySelector("h2").textContent = `${mad.navn} ${mad.pris}`;
+              klon.querySelector(
+                ".kategori"
+              ).textContent = `kategori: ${mad.kategori}`;
+              klon.querySelector(".navn").textContent = `navn: ${mad.navn}`;
+              let pris = (klon.querySelector(
+                ".pris"
+              ).textContent = `pris: ${mad.pris}`);
+              container.appendChild(klon);
+            });
+          }
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
