@@ -97,7 +97,7 @@
           function vis(persongalleri) {
             persongalleri.forEach((mad) => {
               const klon = temp.cloneNode(true).content;
-              klon.querySelector("img").src = `faces/${mad.billede}`;
+              klon.querySelector("img").src = `medium/${mad.billednavn}-md.jpg`;
               klon.querySelector("h2").textContent = `${mad.navn} ${mad.pris}`;
               klon.querySelector(
                 ".kategori"
