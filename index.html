@@ -60,6 +60,7 @@
                 <p class="kategori"></p>
                 <p class="navn"></p>
                 <p class="pris"></p>
+                <p class="kortbeskrivelse"></p>
               </div>
             </article>
           </template>
@@ -94,14 +95,17 @@
           let container = document.querySelector(".container");
           let temp = document.querySelector("template");
 
-          function vis(persongalleri) {
-            persongalleri.forEach((mad) => {
+          function vis(menu) {
+            menu.forEach((mad) => {
               const klon = temp.cloneNode(true).content;
               klon.querySelector("img").src = `medium/${mad.billednavn}-md.jpg`;
               klon.querySelector("h2").textContent = `${mad.navn} ${mad.pris}`;
               klon.querySelector(
                 ".kategori"
               ).textContent = `kategori: ${mad.kategori}`;
+              klon.querySelector(
+                ".kortbeskrivelse"
+              ).textContent = ` ${mad.kortbeskrivelse}`;
               klon.querySelector(".navn").textContent = `navn: ${mad.navn}`;
               let pris = (klon.querySelector(
                 ".pris"
