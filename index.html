@@ -17,18 +17,21 @@
       </head>
       <body>
         <style>
+          html {
+            background-color: #ffffff;
+          }
           @media (min-width: 600px) {
             footer {
               text-align: center;
               margin-bottom: 1.6%;
-              color: rgb(177, 43, 26);
+              color: rgb(0, 0, 0);
             }
             h3 {
               position: absolute;
               top: 20%;
               left: 12%;
               font-size: 1.5rem;
-              color: rgb(177, 43, 26);
+              color: rgb(0, 0, 0);
             }
             nav {
               position: absolute;
@@ -39,18 +42,17 @@
               position: absolute;
               top: 10%;
               left: 42%;
-              color: rgb(177, 43, 26);
+              color: rgb(255, 255, 255);
             }
             section {
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
               gap: 1rem;
               margin: 10rem;
-              margin-top: 15rem;
+              margin-top: 8rem;
             }
             article {
-              border: 3px solid rgb(0, 0, 0);
-              border-radius: 1px;
+              background-color: #b99e8a;
             }
             img {
               max-width: 100%;
@@ -66,36 +68,36 @@
             footer {
               text-align: center;
               margin-bottom: 1.6%;
-              color: rgb(177, 43, 26);
+              color: rgb(0, 0, 0);
             }
             h3 {
               position: absolute;
-              top: 20%;
+              top: 70%;
               left: 12%;
               font-size: 1.5rem;
-              color: rgb(177, 43, 26);
+              color: rgb(0, 0, 0);
             }
             nav {
               position: absolute;
-              top: 29%;
+              top: 80%;
               left: 11.7%;
             }
             h1 {
               position: absolute;
-              top: 10%;
-              left: 42%;
-              color: rgb(177, 43, 26);
+              top: 26%;
+              left: 33%;
+              color: rgb(255, 255, 255);
+              font-size: 4rem;
             }
             section {
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
               gap: 1rem;
               margin: 10rem;
-              margin-top: 15rem;
+              margin-top: 8rem;
             }
             article {
-              border: 3px solid rgb(0, 0, 0);
-              border-radius: 1px;
+              background-color: #b99e8a;
             }
             img {
               width: 100%;
@@ -116,12 +118,20 @@
           }
 
           #modal article {
-            max-width: 900px;
+            max-width: 500px;
             margin: auto;
             background-color: white;
           }
+          header {
+            background-image: url("splashbillede.jpg.jpg");
+            width: 100%;
+            background-size: cover;
+            height: 70vh;
+          }
         </style>
-        <h1>Bistro Barbushka</h1>
+        <header>
+          <h1>Bistro Barbushka</h1>
+        </header>
         <h3>Menu</h3>
         <nav class="filter">
           <button data-kategori="alle" class="valgte">alle</button>
